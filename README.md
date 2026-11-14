@@ -15,9 +15,11 @@ Web reader interaktif dan arsip dokumen lore *canon* terlengkap dari dunia Gensh
 
 ---
 
-## 🌟 Fitur Interaktif Baru: Hyperlink & Ensiklopedia Istilah
+## 🌟 Fitur Interaktif Baru: Hyperlink, Ensiklopedia & Mode Bilingual
 - 🔗 **Interlinking Otomatis**: Setiap istilah penting (seperti *Descender, Fatui Harbingers, The Primordial One, Dragon Sovereigns, Irminsul, Gnoses, Abyss*, dsb.) memiliki tautan interaktif langsung.
 - 🗂️ **Kartu Penjelasan Instan (Modal Popover)**: Cukup klik istilah mana pun saat membaca, dan kartu penjelasan ringkas akan muncul tanpa mengganggu posisi membaca.
+- 🇬🇧 **Inspektur Teks Asli Bahasa Inggris (Hold / Double Tap)**: Cukup **tahan (hold/long press)** atau **ketuk 2x (double tap/double click)** kalimat mana saja untuk memunculkan modal teks asli bahasa Inggris, lengkap dengan fitur salin, dengarkan audio, navigasi kalimat, dan opsi sematkan langsung di teks (*inline*).
+- 🌐 **Mode Baca Bilingual**: Tombol sakelar global `🌐 EN / ID` untuk menampilkan seluruh kalimat bahasa Inggris di bawah terjemahan bahasa Indonesia secara berdampingan.
 - 📖 **Ensiklopedia & Glosarium Terintegrasi**: Tersedia drawer ensiklopedia dengan bilah pencarian langsung (live filter) untuk mencari arti istilah dan melompat langsung ke bab pembahasannya.
 
 ---
