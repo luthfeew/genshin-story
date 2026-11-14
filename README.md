@@ -9,13 +9,20 @@ Web reader interaktif dan arsip dokumen lore *canon* terlengkap dari dunia Gensh
 
 ## 📂 Berkas & Format Dokumen
 
-- 🌐 **[Web Reader Interaktif](https://luthfeew.github.io/genshin-story/)**: Tampilan modern dengan fitur pencarian cepat, navigasi bab, tema gelap/terang, dan desain responsif mobile.
-- 📄 **[Genshin_Impact_Kisah_Lengkap_Lore.pdf](./Genshin_Impact_Kisah_Lengkap_Lore.pdf)**: Dokumen PDF 138 halaman, lengkap dengan nomor halaman, daftar isi, dan format rapi siap cetak atau dibaca offline.
-- 📝 **[Genshin_Impact_Kisah_Lengkap_Lore.docx](./Genshin_Impact_Kisah_Lengkap_Lore.docx)**: Dokumen Word (.docx) terstruktur yang dapat disunting langsung di Microsoft Word atau Google Docs.
+- 🌐 **[Web Reader Interaktif](https://luthfeew.github.io/genshin-story/)**: Tampilan modern dengan fitur interlinking istilah kanon (klik istilah apa saja untuk melihat kartu popover penjelasan instan), drawer ensiklopedia & pencarian cepat istilah, navigasi bab, tema gelap/terang, dan desain responsif mobile.
+- 📄 **[Genshin_Impact_Kisah_Lengkap_Lore.pdf](./Genshin_Impact_Kisah_Lengkap_Lore.pdf)**: Dokumen PDF publikasi lengkap dengan nomor halaman, daftar isi terstruktur, dan Bab Khusus Ensiklopedia Istilah Teyvat siap cetak atau dibaca offline.
+- 📝 **[Genshin_Impact_Kisah_Lengkap_Lore.docx](./Genshin_Impact_Kisah_Lengkap_Lore.docx)**: Dokumen Word (.docx) lengkap dengan Glosarium & Ensiklopedia Istilah yang dapat disunting langsung di Microsoft Word atau Google Docs.
 
 ---
 
-## 📜 Daftar Isi (35 Bab)
+## 🌟 Fitur Interaktif Baru: Hyperlink & Ensiklopedia Istilah
+- 🔗 **Interlinking Otomatis**: Setiap istilah penting (seperti *Descender, Fatui Harbingers, The Primordial One, Dragon Sovereigns, Irminsul, Gnoses, Abyss*, dsb.) memiliki tautan interaktif langsung.
+- 🗂️ **Kartu Penjelasan Instan (Modal Popover)**: Cukup klik istilah mana pun saat membaca, dan kartu penjelasan ringkas akan muncul tanpa mengganggu posisi membaca.
+- 📖 **Ensiklopedia & Glosarium Terintegrasi**: Tersedia drawer ensiklopedia dengan bilah pencarian langsung (live filter) untuk mencari arti istilah dan melompat langsung ke bab pembahasannya.
+
+---
+
+## 📜 Daftar Isi & Struktur Bab
 
 1. **Bab 01**: Sang Pengembara (The Traveler)
 2. **Bab 02**: Kembaran Pengembara (Traveler's Twin)
@@ -51,6 +58,7 @@ Web reader interaktif dan arsip dokumen lore *canon* terlengkap dari dunia Gensh
 32. **Bab 32**: Pyro Archon: Haborym (Mavuika)
 33. **Bab 33**: Cryo Archon: Tsaritsa
 34. **Bab 34**: Dewi Bulan (The Moon Goddess)
+35. **Bab Khusus**: Glosarium & Ensiklopedia Istilah Lore Teyvat
 
 ---
 
