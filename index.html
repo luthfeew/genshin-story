@@ -550,6 +550,278 @@
             font-size: 11.5px;
         }
 
+        
+        /* Chapter Meta Top & Podcast Button */
+        .chapter-meta-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+
+        .chapter-podcast-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.16), rgba(56, 189, 248, 0.12));
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            color: var(--accent-gold);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .chapter-podcast-btn:hover {
+            background: var(--accent-gold);
+            color: #0b0f19;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+        }
+
+        .podcast-time-badge {
+            font-size: 11px;
+            opacity: 0.85;
+            font-weight: 600;
+            background: rgba(0, 0, 0, 0.25);
+            padding: 2px 7px;
+            border-radius: 10px;
+        }
+
+        /* Karaoke Active Highlight */
+        .bilingual-item.karaoke-active {
+            background: linear-gradient(90deg, rgba(245, 158, 11, 0.22), rgba(56, 189, 248, 0.14)) !important;
+            box-shadow: 0 0 16px rgba(245, 158, 11, 0.35);
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 26px !important;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        /* Floating Podcast Player Bar */
+        .podcast-floating-player {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 23, 42, 0.94);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-top: 1px solid var(--accent-gold);
+            box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(245, 158, 11, 0.15);
+            z-index: 180;
+            transform: translateY(115%);
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 12px 24px;
+        }
+
+        .podcast-floating-player.active {
+            transform: translateY(0);
+        }
+
+        [data-theme="light"] .podcast-floating-player {
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 -6px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .podcast-player-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .podcast-info {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex: 1;
+            min-width: 0;
+        }
+
+        /* Equalizer Animation */
+        .podcast-equalizer {
+            display: flex;
+            align-items: flex-end;
+            gap: 3px;
+            height: 22px;
+            width: 22px;
+            flex-shrink: 0;
+        }
+
+        .eq-bar {
+            width: 3.5px;
+            background: var(--accent-gold);
+            border-radius: 2px;
+            height: 4px;
+            transition: height 0.2s ease;
+        }
+
+        .podcast-floating-player.playing .eq-bar:nth-child(1) {
+            animation: eqAnim 0.7s infinite alternate ease-in-out;
+        }
+        .podcast-floating-player.playing .eq-bar:nth-child(2) {
+            animation: eqAnim 0.5s infinite alternate ease-in-out 0.2s;
+        }
+        .podcast-floating-player.playing .eq-bar:nth-child(3) {
+            animation: eqAnim 0.8s infinite alternate ease-in-out 0.4s;
+        }
+        .podcast-floating-player.playing .eq-bar:nth-child(4) {
+            animation: eqAnim 0.6s infinite alternate ease-in-out 0.1s;
+        }
+
+        @keyframes eqAnim {
+            0% { height: 4px; }
+            100% { height: 22px; }
+        }
+
+        .podcast-text-wrap {
+            min-width: 0;
+            flex: 1;
+        }
+
+        .podcast-current-chap {
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--accent-gold);
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .podcast-current-sentence {
+            font-size: 12.5px;
+            color: var(--text-primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.4;
+        }
+
+        .podcast-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .podcast-ctrl-btn {
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 13px;
+            transition: all 0.2s;
+        }
+
+        .podcast-ctrl-btn:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        .podcast-play-toggle-btn {
+            background: var(--accent-gold);
+            color: #0b0f19;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
+            transition: all 0.2s ease;
+        }
+
+        .podcast-play-toggle-btn:hover {
+            transform: scale(1.06);
+            background: var(--accent-gold-hover);
+        }
+
+        .podcast-progress-badge {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-muted);
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .podcast-extra-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .podcast-speed-btn, .podcast-autoscroll-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 11.5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .podcast-speed-btn:hover, .podcast-autoscroll-btn:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        .podcast-autoscroll-btn.active {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+            background: rgba(56, 189, 248, 0.1);
+        }
+
+        .podcast-close-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 18px;
+            cursor: pointer;
+            padding: 4px 8px;
+            transition: color 0.2s;
+        }
+
+        .podcast-close-btn:hover {
+            color: var(--accent-gold);
+        }
+
+        @media (max-width: 768px) {
+            .podcast-floating-player {
+                padding: 10px 14px;
+            }
+            .podcast-info {
+                max-width: 140px;
+            }
+            .podcast-current-sentence {
+                display: none;
+            }
+            .podcast-autoscroll-btn {
+                display: none;
+            }
+        }
+
         /* Chapter Cards */
         .chapter-card {
             background: var(--bg-secondary);
@@ -1171,6 +1443,9 @@
                 Kompilasi canon terlengkap dalam bahasa Indonesia dengan <strong>fitur interlink cerdas</strong>. Klik pada istilah bergaris bawah di teks cerita untuk langsung melihat penjelasannya secara instan!
             </p>
             <div class="hero-actions">
+                <button class="action-btn primary" id="heroPlayFirstPodcastBtn" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+                    🎙️ Putar Podcast Bab 1
+                </button>
                 <button class="action-btn primary" id="heroOpenGlossaryBtn">
                     📚 Buka Ensiklopedia Istilah
                 </button>
@@ -1194,7 +1469,14 @@
             
         <article class="chapter-card" id="chap-01">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 01</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 01</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-01" data-title="BAB 01: Pendahuluan &amp; Catatan Penulis" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~2 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Pendahuluan &amp; Catatan Penulis</h2>
                 <p class="chapter-desc">Pengantar dokumen lore resmi, disclaimer, dan daftar nama iblis Solomon / Ars Goetia di Teyvat</p>
             </div>
@@ -1207,7 +1489,14 @@
 
         <article class="chapter-card" id="chap-02">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 02</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 02</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-02" data-title="BAB 02: Sang Pengembara (The Traveler)" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~5 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Sang Pengembara (The Traveler)</h2>
                 <p class="chapter-desc">Asal-usul kapal luar angkasa, The Fourth Descender, kemampuan memurnikan Abyss, dan perjalanan Pengembara</p>
             </div>
@@ -1220,7 +1509,14 @@
 
         <article class="chapter-card" id="chap-03">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 03</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 03</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-03" data-title="BAB 03: Kembaran Traveler (Traveler's Twin)" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~5 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Kembaran Traveler (Traveler's Twin)</h2>
                 <p class="chapter-desc">Kebangkitan di Khaenri'ah, perjalanan bersama Dainsleif, dan kepemimpinan Abyss Order</p>
             </div>
@@ -1233,7 +1529,14 @@
 
         <article class="chapter-card" id="chap-04">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 04</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 04</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-04" data-title="BAB 04: Para Naga Purba &amp; Dragon Sovereigns" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~15 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Para Naga Purba &amp; Dragon Sovereigns</h2>
                 <p class="chapter-desc">Nibelung, Tujuh Dragon Sovereigns, proyek astronomi kuno, dan Funerary War</p>
             </div>
@@ -1246,7 +1549,14 @@
 
         <article class="chapter-card" id="chap-05">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 05</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 05</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-05" data-title="BAB 05: Three Moon Sisters (Tiga Saudari Bulan)" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~10 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Three Moon Sisters (Tiga Saudari Bulan)</h2>
                 <p class="chapter-desc">Aria, Sonnet, Canon, Istana Bulan kuno, dan bencana kehancuran bulan</p>
             </div>
@@ -1259,7 +1569,14 @@
 
         <article class="chapter-card" id="chap-06">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 06</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 06</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-06" data-title="BAB 06: Narzissenkreuz Ordo" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~14 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Narzissenkreuz Ordo</h2>
                 <p class="chapter-desc">Sejarah Mary-Ann, Rene, Jakob, Alain Guillotin, dan Master Narzissenkreuz</p>
             </div>
@@ -1272,7 +1589,14 @@
 
         <article class="chapter-card" id="chap-07">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 07</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 07</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-07" data-title="BAB 07: Hexenzirkel (Lingkaran Penyihir)" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~4 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Hexenzirkel (Lingkaran Penyihir)</h2>
                 <p class="chapter-desc">Alice, Barbeloth, Rhinedottir, Nicole, Andersdotter, dan tradisi teh para penyihir</p>
             </div>
@@ -1285,7 +1609,14 @@
 
         <article class="chapter-card" id="chap-08">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 08</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 08</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-08" data-title="BAB 08: Organisasi Fatui" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~4 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Organisasi Fatui</h2>
                 <p class="chapter-desc">Latar belakang korps diplomatik &amp; militer Snezhnaya, ideologi Tsaritsa, dan perburuan Gnosis</p>
             </div>
@@ -1298,7 +1629,14 @@
 
         <article class="chapter-card" id="chap-09">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 09</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 09</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-09" data-title="BAB 09: The Eleven Fatui Harbingers" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~40 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">The Eleven Fatui Harbingers</h2>
                 <p class="chapter-desc">The Jester (Pierro), The Captain (Capitano), The Doctor (Dottore), Damselette (Columbina), The Knave (Arlecchino), The Rooster (Pulcinella), The Balladeer (Scaramouche), Marionette (Sandrone), The Fair Lady (La Signora), Regrator (Pantalone), Childe (Tartaglia)</p>
             </div>
@@ -1311,7 +1649,14 @@
 
         <article class="chapter-card" id="chap-10">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 10</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 10</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-10" data-title="BAB 10: Cataclysm (Bencana Besar Khaenri'ah)" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~7 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Cataclysm (Bencana Besar Khaenri'ah)</h2>
                 <p class="chapter-desc">Pemicu bencana 500 tahun lalu, invasi monster Abyss, dan gugurnya para Archon terdahulu</p>
             </div>
@@ -1324,7 +1669,14 @@
 
         <article class="chapter-card" id="chap-11">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 11</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 11</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-11" data-title="BAB 11: Five Sinners (Lima Pendosa Khaenri'ah)" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~9 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Five Sinners (Lima Pendosa Khaenri'ah)</h2>
                 <p class="chapter-desc">Rhinedottir (Gold), Surtalogi (The Foul), Vedrfolnir (The Visionary), Hroptatyr (The Wise), Rerir (The Moon Hunter)</p>
             </div>
@@ -1337,7 +1689,14 @@
 
         <article class="chapter-card" id="chap-12">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 12</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 12</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-12" data-title="BAB 12: Dunia Teyvat, Ley Line, &amp; Hukum Semesta" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~11 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Dunia Teyvat, Ley Line, &amp; Hukum Semesta</h2>
                 <p class="chapter-desc">False Sky (Langit Palsu), jaringan Ley Line, Irminsul, sistem elemen, dan struktur kosmis</p>
             </div>
@@ -1350,7 +1709,14 @@
 
         <article class="chapter-card" id="chap-13">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 13</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 13</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-13" data-title="BAB 13: Negara Mondstadt: Kota Kebebasan" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~26 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Negara Mondstadt: Kota Kebebasan</h2>
                 <p class="chapter-desc">Sejarah Decarabian, Gunnhildr, Lawrence, Ragnvindr, Andrius, Dvalin, dan Knights of Favonius</p>
             </div>
@@ -1363,7 +1729,14 @@
 
         <article class="chapter-card" id="chap-14">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 14</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 14</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-14" data-title="BAB 14: Negara Liyue: Pelabuhan Kontrak" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~26 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Negara Liyue: Pelabuhan Kontrak</h2>
                 <p class="chapter-desc">Archon War, Guizhong, Guardian Yaksha, Adeptus, Liyue Qixing, dan The Chasm</p>
             </div>
@@ -1376,7 +1749,14 @@
 
         <article class="chapter-card" id="chap-15">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 15</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 15</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-15" data-title="BAB 15: Negara Inazuma: Negeri Keabadian" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~26 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Negara Inazuma: Negeri Keabadian</h2>
                 <p class="chapter-desc">Makoto dan Ei, Musou no Hitotachi, Orobashi, Enkanomiya, Tatarasuna, dan Dekrit Sakoku</p>
             </div>
@@ -1389,7 +1769,14 @@
 
         <article class="chapter-card" id="chap-16">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 16</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 16</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-16" data-title="BAB 16: Negara Sumeru: Negeri Kebijaksanaan" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~40 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Negara Sumeru: Negeri Kebijaksanaan</h2>
                 <p class="chapter-desc">King Deshret, Goddess of Flowers (Nabu Malikata), Greater Lord Rukkhadevata, Lesser Lord Kusanali, Akademiya, dan Samsara</p>
             </div>
@@ -1402,7 +1789,14 @@
 
         <article class="chapter-card" id="chap-17">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 17</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 17</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-17" data-title="BAB 17: Negara Fontaine: Bangsa Keadilan" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~16 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Negara Fontaine: Bangsa Keadilan</h2>
                 <p class="chapter-desc">Remuria, Scylla, Ramalan Fontaine, Egeria, Focalors, dan Hydro Sovereign Neuvillette</p>
             </div>
@@ -1415,7 +1809,14 @@
 
         <article class="chapter-card" id="chap-18">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 18</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 18</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-18" data-title="BAB 18: Negara Natlan: Negeri Api dan Perang" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~28 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Negara Natlan: Negeri Api dan Perang</h2>
                 <p class="chapter-desc">Enam Suku Natlan, Wayob, Kerajaan Malam (Night Kingdom), Ode of Resurrection, Phlogiston, dan Saurian</p>
             </div>
@@ -1428,7 +1829,14 @@
 
         <article class="chapter-card" id="chap-19">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 19</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 19</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-19" data-title="BAB 19: Wilayah Nod-Krai" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~7 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Wilayah Nod-Krai</h2>
                 <p class="chapter-desc">Lokasi jatuh pendaratan pesawat Pengembara ribuan zaman yang lalu</p>
             </div>
@@ -1441,7 +1849,14 @@
 
         <article class="chapter-card" id="chap-20">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 20</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 20</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-20" data-title="BAB 20: Negara Snezhnaya: Negeri Salju Abadi" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~16 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Negara Snezhnaya: Negeri Salju Abadi</h2>
                 <p class="chapter-desc">Istana Zapolyarny, peradaban kuno Hyperborea, dan teknologi Ilahi Fatui</p>
             </div>
@@ -1454,7 +1869,14 @@
 
         <article class="chapter-card" id="chap-21">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 21</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 21</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-21" data-title="BAB 21: Peradaban Tanpa Dewa: Khaenri'ah" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~10 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Peradaban Tanpa Dewa: Khaenri'ah</h2>
                 <p class="chapter-desc">Dinasti Eclipse, Dinasti Crimson Moon, Alkimia Khemia, dan Field Tiller (Ruin Guard)</p>
             </div>
@@ -1467,7 +1889,14 @@
 
         <article class="chapter-card" id="chap-22">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 22</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 22</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-22" data-title="BAB 22: Mare Jivari: Lautan Tanpa Angin" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~3 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Mare Jivari: Lautan Tanpa Angin</h2>
                 <p class="chapter-desc">Gurun tanpa hembusan angin, burung api legendaris, dan ujung perbatasan Natlan</p>
             </div>
@@ -1480,7 +1909,14 @@
 
         <article class="chapter-card" id="chap-23">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 23</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 23</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-23" data-title="BAB 23: Abyss &amp; Kekuatan Kegelapan Luar" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~5 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Abyss &amp; Kekuatan Kegelapan Luar</h2>
                 <p class="chapter-desc">Energi kekosongan luar angkasa, korupsi jurang, dan peradaban yang tertelan</p>
             </div>
@@ -1493,7 +1929,14 @@
 
         <article class="chapter-card" id="chap-24">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 24</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 24</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-24" data-title="BAB 24: Celestia: Pulau Terapung Langit" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~4 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Celestia: Pulau Terapung Langit</h2>
                 <p class="chapter-desc">Tahta para dewa, Celestial Nails (Paku Langit), dan sistem kendali Teyvat</p>
             </div>
@@ -1506,7 +1949,14 @@
 
         <article class="chapter-card" id="chap-25">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 25</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 25</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-25" data-title="BAB 25: The Primordial One (Phanes)" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~6 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">The Primordial One (Phanes)</h2>
                 <p class="chapter-desc">Pencipta tatanan dunia baru, pemenang perang atas para naga purba, dan telur kosmis</p>
             </div>
@@ -1519,7 +1969,14 @@
 
         <article class="chapter-card" id="chap-26">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 26</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 26</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-26" data-title="BAB 26: The Four Shades (Empat Bayangan Primordial)" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~13 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">The Four Shades (Empat Bayangan Primordial)</h2>
                 <p class="chapter-desc">Shade of Death (Ronova), Shade of Space (Asmoday), Shade of Time (Istaroth), dan Shade of Life</p>
             </div>
@@ -1532,7 +1989,14 @@
 
         <article class="chapter-card" id="chap-27">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 27</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 27</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-27" data-title="BAB 27: Bangsa Seelie Kuno" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~6 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Bangsa Seelie Kuno</h2>
                 <p class="chapter-desc">Masa kejayaan ras Seelie purba, cinta tragis pengelana bintang, dan kutukan kehilangan akal</p>
             </div>
@@ -1545,7 +2009,14 @@
 
         <article class="chapter-card" id="chap-28">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 28</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 28</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-28" data-title="BAB 28: Anemo Archon: Barbatos (Venti)" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~5 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Anemo Archon: Barbatos (Venti)</h2>
                 <p class="chapter-desc">Roh angin kecil yang menjadi dewa pelindung Mondstadt, Dvalin, dan musik ribuan tahun</p>
             </div>
@@ -1558,7 +2029,14 @@
 
         <article class="chapter-card" id="chap-29">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 29</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 29</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-29" data-title="BAB 29: Geo Archon: Morax (Zhongli)" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~8 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Geo Archon: Morax (Zhongli)</h2>
                 <p class="chapter-desc">Dewa Kontrak tertua, pencipta Mora, dan pelepasan Gnosis demi masa depan manusia</p>
             </div>
@@ -1571,7 +2049,14 @@
 
         <article class="chapter-card" id="chap-30">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 30</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 30</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-30" data-title="BAB 30: Electro Archon: Beelzebul (Raiden Ei)" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~5 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Electro Archon: Beelzebul (Raiden Ei)</h2>
                 <p class="chapter-desc">Ikatan kembar Makoto-Ei, boneka Raiden Shogun, dan pencarian Keabadian</p>
             </div>
@@ -1584,7 +2069,14 @@
 
         <article class="chapter-card" id="chap-31">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 31</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 31</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-31" data-title="BAB 31: Dendro Archon: Buer (Kusanali / Nahida)" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~4 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Dendro Archon: Buer (Kusanali / Nahida)</h2>
                 <p class="chapter-desc">Rukkhadevata, pembersihan Irminsul dari Forbidden Knowledge, dan dewa bungsu Teyvat</p>
             </div>
@@ -1597,7 +2089,14 @@
 
         <article class="chapter-card" id="chap-32">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 32</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 32</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-32" data-title="BAB 32: Hydro Archon: Focalors &amp; Egeria" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~3 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Hydro Archon: Focalors &amp; Egeria</h2>
                 <p class="chapter-desc">Dosa asal manusia Fontaine, keadilan sejati, dan pengorbanan tahta ilahi demi Neuvillette</p>
             </div>
@@ -1610,7 +2109,14 @@
 
         <article class="chapter-card" id="chap-33">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 33</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 33</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-33" data-title="BAB 33: Pyro Archon: Haborym (Mavuika)" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~3 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Pyro Archon: Haborym (Mavuika)</h2>
                 <p class="chapter-desc">Semangat pengorbanan, pertempuran melawan Abyss, dan sumpah persatuan para pahlawan Natlan</p>
             </div>
@@ -1623,7 +2129,14 @@
 
         <article class="chapter-card" id="chap-34">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 34</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 34</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-34" data-title="BAB 34: Cryo Archon: Tsaritsa" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~5 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Cryo Archon: Tsaritsa</h2>
                 <p class="chapter-desc">Dewa Cinta yang membeku, perlawanan terhadap Takdir, dan pemberontakan terhadap Celestia</p>
             </div>
@@ -1636,7 +2149,14 @@
 
         <article class="chapter-card" id="chap-35">
             <div class="chapter-meta">
-                <span class="chapter-badge">BAB 35</span>
+                <div class="chapter-meta-top">
+                    <span class="chapter-badge">BAB 35</span>
+                    <button class="chapter-podcast-btn" data-chap="chap-35" data-title="BAB 35: Moon Goddess (Dewi Bulan Kuno)" title="Dengarkan podcast narasi bab ini">
+                        <span class="podcast-play-icon">▶</span>
+                        <span class="podcast-btn-text">Dengarkan Podcast</span>
+                        <span class="podcast-time-badge">⏱️ ~3 mnt</span>
+                    </button>
+                </div>
                 <h2 class="chapter-title">Moon Goddess (Dewi Bulan Kuno)</h2>
                 <p class="chapter-desc">Sisa kekuatan sang dewi malam dan relik kuno langit Teyvat</p>
             </div>
@@ -1650,6 +2170,39 @@
     </main>
 
     <button class="back-to-top" id="backToTop" title="Kembali ke atas">↑</button>
+
+        <!-- Floating Interactive Podcast Player Bar -->
+    <div class="podcast-floating-player" id="podcastFloatingPlayer">
+        <div class="podcast-player-inner">
+            <div class="podcast-info">
+                <div class="podcast-equalizer" id="podcastEqualizer">
+                    <span class="eq-bar"></span>
+                    <span class="eq-bar"></span>
+                    <span class="eq-bar"></span>
+                    <span class="eq-bar"></span>
+                </div>
+                <div class="podcast-text-wrap">
+                    <div class="podcast-current-chap" id="podcastCurrentChap">BAB 01: SANG PENGEMBARA</div>
+                    <div class="podcast-current-sentence" id="podcastCurrentSentence">Klik putar untuk mendengarkan narasi suara...</div>
+                </div>
+            </div>
+
+            <div class="podcast-controls">
+                <button class="podcast-ctrl-btn" id="podcastPrevSentenceBtn" title="Kalimat Sebelumnya">⏮</button>
+                <button class="podcast-play-toggle-btn" id="podcastPlayToggleBtn" title="Putar / Jeda">
+                    <span id="podcastPlayIcon">▶</span>
+                </button>
+                <button class="podcast-ctrl-btn" id="podcastNextSentenceBtn" title="Kalimat Berikutnya">⏭</button>
+                <span class="podcast-progress-badge" id="podcastProgressBadge">0 / 0</span>
+            </div>
+
+            <div class="podcast-extra-controls">
+                <button class="podcast-speed-btn" id="podcastSpeedBtn" title="Ubah Kecepatan Suara">1.0x</button>
+                <button class="podcast-autoscroll-btn active" id="podcastAutoScrollBtn" title="Gulir Layar Otomatis">📜 Auto-Scroll</button>
+                <button class="podcast-close-btn" id="podcastCloseBtn" title="Tutup Pemutar">✕</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Quick Lore Popup Modal -->
     <div class="lore-modal-overlay" id="loreModalOverlay">
@@ -2318,6 +2871,225 @@
         });
 
         
+        
+        // ==========================================
+        // INTERACTIVE PODCAST AUDIO ENGINE
+        // ==========================================
+        const podcastPlayer = document.getElementById('podcastFloatingPlayer');
+        const podcastEqualizer = document.getElementById('podcastEqualizer');
+        const podcastCurrentChap = document.getElementById('podcastCurrentChap');
+        const podcastCurrentSentence = document.getElementById('podcastCurrentSentence');
+        const podcastPlayToggleBtn = document.getElementById('podcastPlayToggleBtn');
+        const podcastPlayIcon = document.getElementById('podcastPlayIcon');
+        const podcastPrevSentenceBtn = document.getElementById('podcastPrevSentenceBtn');
+        const podcastNextSentenceBtn = document.getElementById('podcastNextSentenceBtn');
+        const podcastProgressBadge = document.getElementById('podcastProgressBadge');
+        const podcastSpeedBtn = document.getElementById('podcastSpeedBtn');
+        const podcastAutoScrollBtn = document.getElementById('podcastAutoScrollBtn');
+        const podcastCloseBtn = document.getElementById('podcastCloseBtn');
+
+        let isPodcastPlaying = false;
+        let currentPodcastChapId = null;
+        let currentPodcastChapTitle = '';
+        let podcastItems = [];
+        let currentPodcastIndex = 0;
+        let podcastSpeed = 1.0;
+        let isAutoScroll = true;
+        let podcastUtterance = null;
+
+        const speedList = [0.8, 1.0, 1.25, 1.5, 2.0];
+
+        function getIndonesianVoice() {
+            if (!('speechSynthesis' in window)) return null;
+            const voices = window.speechSynthesis.getVoices();
+            let v = voices.find(voice => voice.lang && voice.lang.toLowerCase().replace('_', '-').startsWith('id'));
+            if (!v) {
+                v = voices.find(voice => voice.name && voice.name.toLowerCase().includes('indonesia'));
+            }
+            return v || null;
+        }
+
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.onvoiceschanged = () => {
+                getIndonesianVoice();
+            };
+        }
+
+        function startChapterPodcast(chapId, chapTitle) {
+            const chapEl = document.getElementById(chapId);
+            if (!chapEl) return;
+
+            currentPodcastChapId = chapId;
+            currentPodcastChapTitle = chapTitle || chapEl.querySelector('.chapter-title')?.innerText || '';
+            podcastItems = Array.from(chapEl.querySelectorAll('.bilingual-item'));
+            currentPodcastIndex = 0;
+
+            podcastPlayer.classList.add('active');
+            podcastCurrentChap.innerText = currentPodcastChapTitle;
+
+            playPodcastSentence(0);
+        }
+
+        function playPodcastSentence(index) {
+            if (!('speechSynthesis' in window)) {
+                alert('Fitur narasi suara (Speech Synthesis) tidak didukung di browser ini.');
+                return;
+            }
+
+            window.speechSynthesis.cancel();
+            document.querySelectorAll('.karaoke-active').forEach(el => el.classList.remove('karaoke-active'));
+
+            if (index < 0) index = 0;
+            if (index >= podcastItems.length) {
+                finishChapterPodcast();
+                return;
+            }
+
+            currentPodcastIndex = index;
+            const currentItem = podcastItems[currentPodcastIndex];
+            currentItem.classList.add('karaoke-active');
+
+            if (isAutoScroll) {
+                currentItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+
+            const textToSpeak = currentItem.getAttribute('data-id') || currentItem.innerText;
+            podcastCurrentSentence.innerText = textToSpeak;
+            podcastProgressBadge.innerText = `${currentPodcastIndex + 1} / ${podcastItems.length}`;
+
+            const cleanSpeech = textToSpeak
+                .replace(/\(a\/n:[^)]*\)/gi, '')
+                .replace(/["“”'‘’◆•]/g, ' ')
+                .trim();
+
+            podcastUtterance = new SpeechSynthesisUtterance(cleanSpeech);
+            podcastUtterance.lang = 'id-ID';
+            podcastUtterance.rate = podcastSpeed;
+
+            const voice = getIndonesianVoice();
+            if (voice) {
+                podcastUtterance.voice = voice;
+            }
+
+            podcastUtterance.onstart = () => {
+                isPodcastPlaying = true;
+                podcastPlayer.classList.add('playing');
+                podcastPlayIcon.innerText = '⏸';
+            };
+
+            podcastUtterance.onend = () => {
+                if (isPodcastPlaying) {
+                    currentPodcastIndex++;
+                    playPodcastSentence(currentPodcastIndex);
+                }
+            };
+
+            podcastUtterance.onerror = (e) => {
+                console.warn('Speech error:', e);
+                if (isPodcastPlaying && currentPodcastIndex < podcastItems.length - 1) {
+                    currentPodcastIndex++;
+                    playPodcastSentence(currentPodcastIndex);
+                }
+            };
+
+            window.speechSynthesis.speak(podcastUtterance);
+        }
+
+        function pausePodcast() {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+            }
+            isPodcastPlaying = false;
+            podcastPlayer.classList.remove('playing');
+            podcastPlayIcon.innerText = '▶';
+        }
+
+        function resumePodcast() {
+            if (currentPodcastIndex >= 0 && currentPodcastIndex < podcastItems.length) {
+                isPodcastPlaying = true;
+                playPodcastSentence(currentPodcastIndex);
+            } else if (currentPodcastChapId) {
+                startChapterPodcast(currentPodcastChapId, currentPodcastChapTitle);
+            }
+        }
+
+        function togglePodcastPlay() {
+            if (isPodcastPlaying) {
+                pausePodcast();
+            } else {
+                resumePodcast();
+            }
+        }
+
+        function finishChapterPodcast() {
+            pausePodcast();
+            podcastCurrentSentence.innerText = '✓ Bab Selesai!';
+            document.querySelectorAll('.karaoke-active').forEach(el => el.classList.remove('karaoke-active'));
+
+            const currentChapEl = document.getElementById(currentPodcastChapId);
+            const nextChapEl = currentChapEl?.nextElementSibling;
+            if (nextChapEl && nextChapEl.classList.contains('chapter-card')) {
+                const nextId = nextChapEl.id;
+                const nextTitle = nextChapEl.querySelector('.chapter-title')?.innerText || '';
+                setTimeout(() => {
+                    if (confirm(`Bab selesai! Lanjut dengarkan podcast bab berikutnya: ${nextTitle}?`)) {
+                        startChapterPodcast(nextId, nextTitle);
+                    }
+                }, 600);
+            }
+        }
+
+        function stopAndClosePodcast() {
+            pausePodcast();
+            podcastPlayer.classList.remove('active');
+            document.querySelectorAll('.karaoke-active').forEach(el => el.classList.remove('karaoke-active'));
+        }
+
+        podcastPlayToggleBtn.addEventListener('click', togglePodcastPlay);
+        podcastPrevSentenceBtn.addEventListener('click', () => {
+            if (currentPodcastIndex > 0) {
+                playPodcastSentence(currentPodcastIndex - 1);
+            }
+        });
+        podcastNextSentenceBtn.addEventListener('click', () => {
+            if (currentPodcastIndex < podcastItems.length - 1) {
+                playPodcastSentence(currentPodcastIndex + 1);
+            }
+        });
+
+        podcastSpeedBtn.addEventListener('click', () => {
+            let curIdx = speedList.indexOf(podcastSpeed);
+            curIdx = (curIdx + 1) % speedList.length;
+            podcastSpeed = speedList[curIdx];
+            podcastSpeedBtn.innerText = podcastSpeed.toFixed(1) + 'x';
+            if (isPodcastPlaying) {
+                playPodcastSentence(currentPodcastIndex);
+            }
+        });
+
+        podcastAutoScrollBtn.addEventListener('click', () => {
+            isAutoScroll = !isAutoScroll;
+            podcastAutoScrollBtn.classList.toggle('active', isAutoScroll);
+        });
+
+        podcastCloseBtn.addEventListener('click', stopAndClosePodcast);
+
+        document.querySelectorAll('.chapter-podcast-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const chapId = btn.getAttribute('data-chap');
+                const chapTitle = btn.getAttribute('data-title');
+                startChapterPodcast(chapId, chapTitle);
+            });
+        });
+
+        const heroPlayFirstPodcastBtn = document.getElementById('heroPlayFirstPodcastBtn');
+        if (heroPlayFirstPodcastBtn) {
+            heroPlayFirstPodcastBtn.addEventListener('click', () => {
+                startChapterPodcast('chap-01', 'BAB 01: SANG PENGEMBARA');
+            });
+        }
+
         // ==========================================
         // BILINGUAL / ORIGINAL ENGLISH INSPECTOR
         // ==========================================
